@@ -1,0 +1,33 @@
+# OS generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Python environments
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files (You might want to exclude large data files)
+data/*  
+!data/.gitkeep  # Keep the data directory, but not its contents
+
+# IDE/Editor files
+.idea/
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Other files to exclude
+notes.txt #Example of files that you can exclude.
