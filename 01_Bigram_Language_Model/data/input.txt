@@ -1,0 +1,3 @@
+This is a small example text for demonstrating the bigram language model.
+The bigram model predicts the next word based on the current word.
+This is a simple example, but it illustrates the basic concept.

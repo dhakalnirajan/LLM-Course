@@ -1,0 +1,43 @@
+# Core Libraries
+torch>=2.0.0    # PyTorch (>= 2.0 for newer features, but adjust if needed)
+torchvision>=0.15.0 # Optional: For computer vision tasks (if doing multimodal later)
+torchaudio>=2.0.0  # Optional: For audio tasks (if doing multimodal later)
+numpy>=1.23   # Numerical operations
+scipy>=1.9     # Scientific computing (might be needed for some advanced stats)
+
+# Data Handling and Processing
+pandas>=1.5    # Data manipulation and analysis
+datasets>=2.14.0 # Hugging Face Datasets library
+tokenizers>=0.13.3 # Hugging Face Tokenizers library
+
+# Model Building and Training
+transformers>=4.35.0 # Hugging Face Transformers library (for pre-trained models, etc.)
+accelerate>=0.24.0 # For distributed training and mixed precision
+peft>=0.6.0       # Parameter-Efficient Fine-Tuning (LoRA, etc.)
+bitsandbytes>=0.41.0 # For 8-bit optimizers and quantization
+
+# Visualization and Analysis
+matplotlib>=3.5 # Plotting and visualization
+seaborn>=0.12  # Statistical data visualization
+jupyterlab>=3.5   # For interactive notebooks (or jupyter notebook)
+ipywidgets>=8.0 # Interactive widgets in Jupyter
+
+# Development and Utilities
+tqdm>=4.64      # Progress bars
+requests>=2.28   # For making HTTP requests (e.g., downloading datasets)
+pytest>=7.0     # For writing unit tests (highly recommended!)
+flake8>=5.0     # For code linting (good practice)
+black>=23.0   # For code formatting (automatic code style)
+pre-commit>=2.20.0  # For running pre-commit hooks (linting, formatting)
+wandb>=0.16.0 #Weights and Biases for experiment and model tracking
+
+# Deployment (Optional - may not be needed for all chapters)
+fastapi>=0.104.0  # For building APIs
+uvicorn>=0.23.0    # ASGI server for running FastAPI
+pydantic>=2.0     # Data validation for FastAPI
+
+# JAX (Optional, for Chapter Appendix/if you want to use JAX)
+jax[cpu]>=0.4.20       # JAX (CPU version - use jax[cuda] for GPU)
+jaxlib>=0.4.20      # JAX library (must match JAX version)
+flax>=0.7.5        # Neural network library for JAX (similar to PyTorch)
+optax>=0.1.7        # Optimization library for JAX
