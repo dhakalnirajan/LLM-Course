@@ -1,5 +1,12 @@
 import yaml
 from typing import Dict, Any, Optional
+from cerberus import Validator
+
+config_schema = {
+    'dataset_path': {'type': 'string', 'required': True},
+    'batch_size': {'type': 'integer', 'required': True, 'min': 1},
+    'learning_rate': {'type': 'float', 'required': True, 'min': 0},
+}
 
 class Config:
     """
@@ -16,29 +23,43 @@ class Config:
         self.config = self._load_config()
 
     def _load_config(self) -> Dict[str, Any]:
-        """Loads the YAML configuration file."""
-        try:
-            with open(self.config_path, 'r') as f:
-                return yaml.safe_load(f)
-        except FileNotFoundError:
-            print(f"Error: Configuration file not found at {self.config_path}")
-            return {}  # Return an empty dictionary
-        except yaml.YAMLError as e:
-            print(f"Error parsing YAML file: {e}")
-            return {}
+    """Loads the YAML configuration file and validates against schema"""
+    try:
+        with open(self.config_path, 'r') as f:
+            config = yaml.safe_load(f)
+    except FileNotFoundError:
+        print(f"Error: Configuration file not found at {self.config_path}")
+        return {}
+    except yaml.YAMLError as e:
+        print(f"Error parsing YAML file: {e}")
+        return {}
+
+    v = Validator(config_schema)
+    if not v.validate(config):
+        print(f"Error validating config file: {v.errors}")
+        return {}
+    return v.document
 
     def get(self, key: str, default: Optional[Any] = None) -> Any:
-        """
-        Retrieves a configuration value by key.
+    """
+    Retrieves a configuration value, checking environment variables first.
+    """
+    env_var_name = key.upper()  # e.g., BATCH_SIZE
+    env_var = os.environ.get(env_var_name)
+    if env_var is not None:
+        # Attempt to convert to appropriate type
+        try:
+            if isinstance(default, int):
+                return int(env_var)
+            elif isinstance(default, float):
+                return float(env_var)
+            elif isinstance(default, bool):
+                return env_var.lower() in ('true', '1', 'yes')
+        except ValueError:
+            print(f"Warning: Could not convert environment variable {env_var_name} to expected type. Using default.")
+        return env_var
 
-        Args:
-            key: The configuration key.
-            default: The default value to return if the key is not found.
-
-        Returns:
-            The configuration value, or the default value if the key is not found.
-        """
-        return self.config.get(key, default)
+    return self.config.get(key, default)
 
     def __getitem__(self, key: str) -> Any:
         """

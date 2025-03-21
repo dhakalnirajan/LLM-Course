@@ -30,6 +30,7 @@ flake8>=5.0     # For code linting (good practice)
 black>=23.0   # For code formatting (automatic code style)
 pre-commit>=2.20.0  # For running pre-commit hooks (linting, formatting)
 wandb>=0.16.0 #Weights and Biases for experiment and model tracking
+cerberus>=1.3.7 # For data validation and schema checking
 
 # Deployment (Optional - may not be needed for all chapters)
 fastapi>=0.104.0  # For building APIs
