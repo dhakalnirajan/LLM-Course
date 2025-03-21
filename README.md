@@ -62,7 +62,7 @@ The course is structured into the following chapters:
 1. **Clone the Repository:**
 
     ```bash
-    git clone <your_repository_url>  # Replace with your repository URL
+    git clone https://github.com/dhakalnirajan/LLM-Course.git
     cd llm_course
     ```
 

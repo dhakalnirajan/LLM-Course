@@ -1,0 +1,24 @@
+{# _templates/layout.html #}
+{% extends "!layout.html" %} {# Inherit from the default layout #}
+
+{%- block extrahead %}
+{{ super() }}
+<link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}"
+    type="text/css" />
+<script type="text/javascript"
+    src="{{ pathto('_static/custom.js', 1) }}"></script>
+{% endblock %}
+
+{% block document %}
+<div class="my-custom-wrapper">
+    {{ super() }} {# Include the original content #}
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="my-custom-footer">
+    <p>© {{ copyright }}. Built with <a
+            href="https://www.sphinx-doc.org/">Sphinx</a>.</p>
+</div>
+{{ super() }}
+{% endblock %}

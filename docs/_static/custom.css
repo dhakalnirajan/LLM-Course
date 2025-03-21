@@ -1,0 +1,95 @@
+/* Increase the font size for better readability */
+body {
+    font-size: 16px;
+}
+
+/* Change the color of links */
+a {
+    color: #007bff;
+    /* Bootstrap primary blue */
+}
+
+a:hover {
+    color: #0056b3;
+    /* Darker blue on hover */
+    text-decoration: underline;
+    /* Underline on hover*/
+}
+
+/* Style for code blocks (increase font size, add background) */
+div.highlight pre {
+    font-size: 14px;
+    background-color: #f8f9fa;
+    /* Light gray background */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    /* Add horizontal scroll for long lines */
+}
+
+/* Style for docstrings (e.g., make parameters stand out)*/
+dl.field-list dt {
+    font-weight: bold;
+}
+
+/* Style for Admonitions (notes, warnings, etc.)*/
+
+div.admonition {
+    margin: 1em 0;
+    padding: 1em;
+    border-left: 5px solid;
+    border-radius: 5px;
+}
+
+div.admonition.note {
+    background-color: #e7f2fa;
+    /* Light blue */
+    border-color: #17a2b8;
+    /* Bootstrap info blue */
+}
+
+div.admonition p.admonition-title {
+    font-weight: bolder;
+}
+
+div.admonition.warning {
+    background-color: #fff3cd;
+    /* Light yellow */
+    border-color: #ffc107;
+    /* Bootstrap warning yellow */
+}
+
+div.admonition.danger {
+    background-color: #f8d7da;
+    /* Light red */
+    border-color: #dc3545;
+    /* Bootstrap danger red */
+}
+
+div.admonition.tip {
+    background-color: #d4edda;
+    /* Light Green */
+    border-color: #28a745;
+    /* Bootstrap Green */
+}
+
+/* Customize section headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    border-bottom: 2px solid #ccc;
+    /* Light gray border*/
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+    /* Light gray border*/
+}
