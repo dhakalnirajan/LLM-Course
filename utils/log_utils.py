@@ -1,4 +1,5 @@
 import wandb
+from typing import Dict, Optional
 
 def init_wandb(project_name: str, config: Dict, run_name: Optional[str] = None, entity:Optional[str]=None):
     """Initializes a wandb run."""

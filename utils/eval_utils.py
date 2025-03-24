@@ -2,8 +2,10 @@ import torch
 import torch.nn.functional as F
 from typing import List, Optional, Dict
 from nltk.translate.bleu_score import sentence_bleu, corpus_bleu
-from rouge import Rouge  # You might need to install this: pip install rouge
+from rouge import Rouge
 import numpy as np
+from utils.data_utils import decode_text #Import decode_text
+
 
 def calculate_perplexity(model: torch.nn.Module, data_loader: torch.utils.data.DataLoader, device: torch.device) -> float:
     """Calculates the perplexity of a language model."""

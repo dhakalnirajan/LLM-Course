@@ -48,3 +48,5 @@ sphinx>=4.0  # Sphinx itself
 sphinx-rtd-theme>=1.0 # Read the Docs theme (looks nice)
 sphinx-autodoc-typehints # For type hint support in docstrings
 myst-parser #If you want to write some documentation in Markdown.
+
+rouge>=1.0.0 # For evaluation of text summarization models

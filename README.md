@@ -47,8 +47,6 @@ The course is structured into the following chapters:
 
 ## Prerequisites
 
-<!--  Be very specific about the required knowledge and skills. -->
-
 * **Programming:**  Strong proficiency in Python.  Familiarity with C/C++ is a plus, but not strictly required.
 * **Machine Learning:**  Solid understanding of machine learning fundamentals (e.g., supervised learning, neural networks, loss functions, optimization).
 * **Linear Algebra:**  Comfortable with basic linear algebra concepts (vectors, matrices, dot products, matrix multiplication).
@@ -57,13 +55,11 @@ The course is structured into the following chapters:
 
 ## Setup
 
-<!--  Provide step-by-step instructions on how to set up the development environment. -->
-
 1. **Clone the Repository:**
 
     ```bash
     git clone https://github.com/dhakalnirajan/LLM-Course.git
-    cd llm_course
+    cd LLM_Course
     ```
 
 2. **Create a Virtual Environment (Recommended):**
@@ -90,7 +86,6 @@ The course is structured into the following chapters:
 
 ## Contributing
 
-<!--  Explain how others can contribute to the project. -->
 Contributions are welcome!  If you find any errors, have suggestions for improvements, or want to add new content, please follow these steps:
 
 1. Fork the repository.
